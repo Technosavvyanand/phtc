@@ -1,14 +1,14 @@
-import { Navbar } from "@/components/navbar"
-import { HeroSection } from "@/components/hero-section"
-import { StatsSection } from "@/components/stats-section"
-import { ServicesSection } from "@/components/services-section"
-import { WhyChooseUsSection } from "@/components/why-choose-us-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { FAQSection } from "@/components/faq-section"
-import { CTASection } from "@/components/cta-section"
 import { ContactSection } from "@/components/contact-section"
+import { CTASection } from "@/components/cta-section"
+import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
+import { HeroSection } from "@/components/hero-section"
+import { MABSection } from "@/components/mab-section"
+import { Navbar } from "@/components/navbar"
+import { ServicesSection } from "@/components/services-section"
+import { StatsSection } from "@/components/stats-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { WhyChooseUsSection } from "@/components/why-choose-us-section"
 
 export default function HomePage() {
   return (
@@ -18,7 +18,7 @@ export default function HomePage() {
       <StatsSection />
       <ServicesSection />
       <WhyChooseUsSection />
-      <TestimonialsSection />
+      <MABSection />
       <FAQSection />
       <CTASection />
       <ContactSection />

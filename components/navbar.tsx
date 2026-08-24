@@ -1,17 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const navLinks = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Why Us", href: "#why-us" },
-  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -23,7 +22,9 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
+
     window.addEventListener("scroll", handleScroll)
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -51,8 +52,11 @@ export function Navbar() {
                   className="object-cover"
                 />
               </div>
+
               <div className="hidden sm:block">
-                <span className="text-lg font-bold gradient-text">Ph Test Consultants</span>
+                <span className="text-lg font-bold gradient-text">
+                  Ph Test Consultants
+                </span>
               </div>
             </Link>
 
@@ -65,6 +69,7 @@ export function Navbar() {
                   className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                 >
                   {link.name}
+
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-3/4 rounded-full" />
                 </Link>
               ))}
@@ -77,6 +82,7 @@ export function Navbar() {
                 className="relative px-6 py-2.5 text-sm font-semibold text-secondary-foreground bg-secondary rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30 hover:scale-105 group"
               >
                 <span className="relative z-10">Get Started</span>
+
                 <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </div>
@@ -107,6 +113,7 @@ export function Navbar() {
               className="absolute inset-0 bg-background/80 backdrop-blur-xl"
               onClick={() => setIsMobileMenuOpen(false)}
             />
+
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -124,12 +131,18 @@ export function Navbar() {
                     className="object-cover"
                   />
                 </div>
+
                 <div>
-                  <span className="text-lg font-bold gradient-text">Ph Test Consultants</span>
-                  <p className="text-xs text-muted-foreground">Where knowledge takes the litmus test</p>
+                  <span className="text-lg font-bold gradient-text">
+                    Ph Test Consultants
+                  </span>
+
+                  <p className="text-xs text-muted-foreground">
+                    Where knowledge takes the litmus test
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex flex-col gap-2">
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -147,6 +160,7 @@ export function Navbar() {
                     </Link>
                   </motion.div>
                 ))}
+
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}

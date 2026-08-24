@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -135,8 +135,8 @@ export function HeroSection() {
               >
                 <div className="relative w-72 h-72 rounded-3xl overflow-hidden glass-card animate-glow shadow-premium-lg">
                   <Image
-                    src="/logo.jpeg"
-                    alt="Ph Test Consultants - Premium Academic Consulting Services"
+                    src="/images/academic-consulting-education.png"
+                    alt="Academic consulting and education"
                     fill
                     className="object-cover"
                     priority
