@@ -1,9 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
+import { Footer } from "@/components/footer"
+import { Navbar } from "@/components/navbar"
 
 const team = [
   {
@@ -46,6 +49,9 @@ const fadeInUp = {
 export default function TeamPage() {
   return (
     <main className="min-h-screen bg-background overflow-hidden">
+      {/* Shared site navbar */}
+      <Navbar />
+
       {/* Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[160px]" />
@@ -54,19 +60,6 @@ export default function TeamPage() {
 
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.018)_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
-
-      {/* Header */}
-      <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Ph Test Consultants
-          </Link>
-        </div>
-      </header>
 
       {/* Hero */}
       <section className="relative z-10 pt-20 pb-16 sm:pt-28 sm:pb-20">
@@ -131,7 +124,9 @@ export default function TeamPage() {
 
               <div
                 className={`relative grid lg:grid-cols-[300px_1fr] gap-10 lg:gap-14 items-center ${
-                  index % 2 === 1 ? "lg:grid-cols-[1fr_300px]" : ""
+                  index % 2 === 1
+                    ? "lg:grid-cols-[1fr_300px]"
+                    : ""
                 }`}
               >
                 {/* Portrait */}
@@ -157,7 +152,7 @@ export default function TeamPage() {
                     {/* Secondary circle */}
                     <div className="absolute -inset-2 rounded-full border border-secondary/15" />
 
-                    {/* Portrait background */}
+                    {/* Portrait */}
                     <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-br from-primary/40 via-secondary/20 to-primary/5 shadow-premium-lg">
                       <div className="relative w-full h-full rounded-full overflow-hidden bg-card border border-border/50">
                         <Image
@@ -234,13 +229,17 @@ export default function TeamPage() {
               whileHover={{ y: -6 }}
               className="glass-card rounded-3xl p-8 border border-border/50"
             >
-              <span className="text-5xl font-bold text-primary/20">01</span>
+              <span className="text-5xl font-bold text-primary/20">
+                01
+              </span>
+
               <h3 className="text-xl font-bold mt-5 mb-3 text-foreground">
                 Prabhat builds the framework.
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
-                Technology, automation, operations, and scalable systems form
-                the foundation for sustainable growth.
+                Technology, automation, operations, and scalable systems
+                form the foundation for sustainable growth.
               </p>
             </motion.div>
 
@@ -248,13 +247,17 @@ export default function TeamPage() {
               whileHover={{ y: -6 }}
               className="glass-card rounded-3xl p-8 border border-border/50"
             >
-              <span className="text-5xl font-bold text-secondary/20">02</span>
+              <span className="text-5xl font-bold text-secondary/20">
+                02
+              </span>
+
               <h3 className="text-xl font-bold mt-5 mb-3 text-foreground">
                 Harshit fuels the growth.
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
-                People, market presence, capital, and organizational alignment
-                keep the growth engine moving.
+                People, market presence, capital, and organizational
+                alignment keep the growth engine moving.
               </p>
             </motion.div>
 
@@ -262,13 +265,17 @@ export default function TeamPage() {
               whileHover={{ y: -6 }}
               className="glass-card rounded-3xl p-8 border border-border/50"
             >
-              <span className="text-5xl font-bold text-primary/20">03</span>
+              <span className="text-5xl font-bold text-primary/20">
+                03
+              </span>
+
               <h3 className="text-xl font-bold mt-5 mb-3 text-foreground">
                 Vinay guides the direction.
               </h3>
+
               <p className="text-muted-foreground leading-relaxed">
-                Engineering thinking, structural problem-solving, and strategic
-                decisions keep the organization aligned.
+                Engineering thinking, structural problem-solving, and
+                strategic decisions keep the organization aligned.
               </p>
             </motion.div>
           </div>
@@ -284,9 +291,9 @@ export default function TeamPage() {
             </h2>
 
             <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Whether you are solving a complex problem, scaling an operation,
-              or building something new, our combined perspective helps turn
-              challenges into practical solutions.
+              Whether you are solving a complex problem, scaling an
+              operation, or building something new, our combined
+              perspective helps turn challenges into practical solutions.
             </p>
 
             <motion.div
@@ -306,15 +313,8 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Footer link back */}
-      <div className="relative z-10 pb-12 text-center">
-        <Link
-          href="/"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          ← Return to Ph Test Consultants
-        </Link>
-      </div>
+      {/* Shared site footer */}
+      <Footer />
     </main>
   )
 }
