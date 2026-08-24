@@ -17,6 +17,7 @@ const footerLinks = {
   company: [
     { name: "About Us", href: "#about" },
     { name: "Why Choose Us", href: "#why-us" },
+      { name: "Meet Our Team", href: "/team" },
     { name: "MyAssignmentBuddies", href: "https://myassignmentbuddies.com" },
     { name: "Careers", href: "#" },
     { name: "Blog", href: "#" },
