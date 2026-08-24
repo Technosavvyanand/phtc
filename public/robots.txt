@@ -1,0 +1,14 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://phtestconsultants.in/sitemap.xml
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Crawl-delay (optional, for politeness)
+Crawl-delay: 1
